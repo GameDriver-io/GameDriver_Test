@@ -33,15 +33,6 @@
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.3.13.2\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="gdio.unity_api">
-      <HintPath>..\..\..\..\..\Desktop\Builds\2019.4.23f1\gdio_api.packed\gdio.unity_api.dll</HintPath>
-    </Reference>
-    <Reference Include="gdio.plugin.serializer">
-      <HintPath>..\..\..\..\..\Desktop\Builds\2019.4.23f1\gdio_api.packed\gdio.plugin.serializer.dll</HintPath>
-    </Reference>
-    <Reference Include="gdio.common.objects">
-      <HintPath>..\..\..\..\..\Desktop\Builds\2019.4.23f1\gdio_api.packed\gdio.common.objects.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyClass.cs" />
