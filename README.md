@@ -11,7 +11,7 @@ public void AnotherTest()
 }
 ```
 
-Additional documentation can be found at on the [GameDriver Support](https://support.gamedriver.io} website.
+Additional documentation can be found at on the [GameDriver Support](https://support.gamedriver.io) website.
 
 Contributions are encouraged, and appreciated.
 
