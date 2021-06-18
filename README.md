@@ -1,4 +1,4 @@
-# GameDriver Test
+# GameDriver Sample Test
 
 This project is intended to demonstrate the structure and usage of a GameDriver NUnit test for Unity. The project includes a Sample .NET 4.7.x project in Visual Studio with the NUnit 3 Test Adapter, Console Runner, and requires the latest version of the GameDriver API client which can be found at GameDriver.io/download
 
