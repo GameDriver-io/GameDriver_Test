@@ -65,7 +65,7 @@ namespace DemoTest
         [Test]
         public void Test2()
         {
-            // Do something else. Tests should be able to run independently after the steps in [OneTimeSetup] and should use try/catch blocks to avoid exiting prematurely on failure
+            // Do something else. Tests should be able to run independently after the steps in [OneTimeSetup] and can use try/catch blocks to avoid exiting prematurely on failure
         }
 
         [OneTimeTearDown]
