@@ -15,15 +15,17 @@ namespace DemoTest
         public string testMode = TestContext.Parameters.Get("Mode", "IDE");
         public string pathToExe = TestContext.Parameters.Get("pathToExe", null); // replace null with the path to your executable as needed, or via the command line as shown above
 
+        // Here we initialize the ApiClient
         ApiClient api;
 
         [OneTimeSetUp]
         public void Connect()
         {
+            api = new ApiClient();
+
             try
             {
                 // First we need to create an instance of the ApiClient
-                api = new ApiClient();
 
                 // If an executable path was supplied, we will launch the standalone game
                 if (pathToExe != null)
@@ -49,17 +51,21 @@ namespace DemoTest
             // Enable input hooking
             api.EnableHooks(HookingObject.ALL);
 
-            // Start the Game - in this example we're waiting for an object called "StartButton" to become active, then clicking it.
-            // Be sure to substitute or remove for your own project.
-            api.WaitForObject("//*[@name='StartButton']");
-            api.ClickObject(MouseButtons.LEFT, "//*[@name='StartButton']", 30);
+            // Give the application some time to load. Time for your app may vary.
             api.Wait(3000);
         }
 
         [Test]
         public void Test1()
         {
-            // Do something
+            // Do something. Example:
+            /// Wait for a button to exist
+            /// api.WaitForObject("//*[@name='Button']", 30);
+            /// Click the button
+            /// api.ClickObject(MouseButtons.LEFT, "//*[@name='Button']", 30);
+            /// api.Wait(1000);
+            /// Check that some text appeared
+            /// Assert.AreEqual("Success", api.GetObjectFieldValue<string>("//*[@name='Text']/fn:component('TMPro.TextMeshProUGUI')/@text"), "Text doesn't match");
         }
 
         [Test]
@@ -73,9 +79,11 @@ namespace DemoTest
         {
             // Disconnect the GameDriver client from the agent
             api.DisableHooks(HookingObject.ALL);
-            api.Wait(2000);
+            api.Wait(1000);
             api.Disconnect();
-            api.Wait(2000);
+            api.Wait(1000);
+            // Comment out this line if you want to keep the editor in Play mode
+            api.StopEditorPlay();
         }
     }
 }
